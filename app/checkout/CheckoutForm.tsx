@@ -35,10 +35,6 @@ export default function CheckoutForm() {
     paymentMethod,
     setPaymentMethod,
     orderTotal,
-    // couponValidation,
-    // setCouponValidation,
-    // appliedCouponCode,
-    // setAppliedCouponCode
   } = useCheckout();
   const [formData, setFormData] = useState<CheckoutFormData>({
     firstName: "",
@@ -62,10 +58,6 @@ export default function CheckoutForm() {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showCardPop, setShowCardPop] = useState(false);
   const router = useRouter();
-
-  // Coupon code state
-  // const [couponCode, setCouponCode] = useState("");
-  // const [couponLoading, setCouponLoading] = useState(false);
 
   type CountryOption = { value: string; label: string };
   type PaymentMethodOption = { value: string; label: string; description?: string };
@@ -183,42 +175,6 @@ export default function CheckoutForm() {
   const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // const validateCoupon = async (code: string) => {
-  //   if (!code.trim()) {
-  //     setCouponValidation(null);
-  //     setAppliedCouponCode("");
-  //     return;
-  //   }
-
-  //   setCouponLoading(true);
-  //   try {
-  //     const res = await axios.get(
-  //       `${BASE_API_URL}/checkout/validateCoupon?code=${encodeURIComponent(code)}`
-  //     );
-
-  //     setCouponValidation({
-  //       valid: res.data.valid,
-  //       message: res.data.message,
-  //       discount_percentage: res.data.discount_percentage || 0,
-  //     });
-
-  //     if (res.data.valid) {
-  //       setAppliedCouponCode(code);
-  //     } else {
-  //       setAppliedCouponCode("");
-  //     }
-  //   } catch (error) {
-  //     setCouponValidation({
-  //       valid: false,
-  //       message: error instanceof Error ? error.message : "Failed to validate coupon",
-  //       discount_percentage: 0,
-  //     });
-  //     setAppliedCouponCode("");
-  //   } finally {
-  //     setCouponLoading(false);
-  //   }
-  // };
-
   // Auto-validate coupon code with debounce
   useEffect(() => {
     // Clear existing timer
@@ -226,19 +182,6 @@ export default function CheckoutForm() {
       clearTimeout(debounceTimerRef.current);
     }
 
-    // If coupon code is empty, clear validation
-    // if (!couponCode.trim()) {
-    //   setCouponValidation(null);
-    //   setAppliedCouponCode("");
-    //   return;
-    // }
-
-    // Set new timer for validation
-    // debounceTimerRef.current = setTimeout(() => {
-    //   validateCoupon(couponCode);
-    // }, 500); // 500ms debounce
-
-    // Cleanup
     return () => {
       if (debounceTimerRef.current) {
         clearTimeout(debounceTimerRef.current);
@@ -274,7 +217,7 @@ export default function CheckoutForm() {
       const res = await axios.post(`${BASE_API_URL}/checkout/createGuestOrder`, {
         userData: formData,
         items,
-        website: "RC",
+        website: "PH",
         paymentMethod,
         // couponCode: appliedCouponCode,
       }, {
