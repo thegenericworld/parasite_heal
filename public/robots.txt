@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /cart
+Disallow: /checkout
+Disallow: /404
+Disallow: /crypto-guide
+Disallow: /auth/
+Disallow: /account/
+
+Sitemap: /sitemap-index.xml
