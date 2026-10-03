@@ -69,20 +69,9 @@ export default function RootLayout({
                         </Suspense>
                         <Footer></Footer>
                         <FloatingChat />
-
-                        {/* Umami analytics (self-hosted). Loaded once here so it
-                            covers every route. afterInteractive keeps it off the
-                            critical path — the tracking beacon is not needed for
-                            first paint.
-
-                            NOTE: this URL is plain HTTP while the site is served
-                            over HTTPS. Browsers block that as mixed content, so
-                            the script will silently fail in production until the
-                            Umami instance is reachable over HTTPS. See the deploy
-                            note in the project memory. */}
                         <Script
-                            src="https://analytics.ParasiteHeal.com/script.js"
-                            data-website-id="97971eae-8cdf-46d7-8950-3cb3640d7ad0"
+                            src="https://analytics.reliablechemist.com/script.js"
+                            data-website-id="b5641635-a0fa-4879-8356-135d4e2609dd"
                             strategy="afterInteractive"
                         />
                     </NavigationProvider>
