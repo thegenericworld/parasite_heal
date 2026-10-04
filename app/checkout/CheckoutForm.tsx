@@ -349,7 +349,7 @@ export default function CheckoutForm() {
 
         {/* Country Selection */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          <p>
+          <div>
             <label htmlFor="country" className="block text-[15px] sm:text-base font-semibold text-gray-800 mb-2">
               Country *
             </label>
@@ -364,8 +364,8 @@ export default function CheckoutForm() {
               styles={selectStyles}
               classNamePrefix="react-select"
             />
-          </p>
-          <p className="md:mt-8 text-gray-700">If you are from different country, please contact: <a className="text-blue-600 font-bold" href="mailto:ParasiteHeal@gmail.com">ParasiteHeal@gmail.com</a></p>
+          </div>
+          <div className="md:mt-8 text-gray-700">If you are from different country, please contact: <a className="text-blue-600 font-bold" href="mailto:ParasiteHeal@gmail.com">ParasiteHeal@gmail.com</a></div>
         </div>
 
 
@@ -477,8 +477,9 @@ export default function CheckoutForm() {
 
         <button
           type="submit"
-          className={`w-full px-6 py-4 mt-4 md:mt-8 text-lg font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg
-        text-white bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-4 focus:ring-sky-300 cursor-pointer transform hover:-translate-y-0.5 hover:shadow-xl`}
+          className="w-full px-6 py-4 mt-4 md:mt-8 text-lg font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg
+        text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 cursor-pointer transform hover:-translate-y-0.5 hover:shadow-xl"
+          style={{ backgroundColor: "#168a59" }}
         >
           {isSubmitting ? (
             <>
