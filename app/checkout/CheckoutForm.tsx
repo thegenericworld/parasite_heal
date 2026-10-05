@@ -237,7 +237,7 @@ export default function CheckoutForm() {
       if (paymentMethod === 'crypto') {
         window.location.href = res.data.paymentLink;
       } else {
-        if (orderTotal < 330) {
+        if (orderTotal < 550) {
           setOrderId(res.data.id);
           setShowCardPop(true);
         }
