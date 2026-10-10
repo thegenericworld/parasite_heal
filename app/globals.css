@@ -16,7 +16,7 @@ html, body {
   overflow-x: clip; /* clip allows sticky elements to work, while hidden often breaks position: sticky on page */
 }
 
-body {
+/* body {
   background: #fbfefc;
   color: var(--medical-ink);
 }
@@ -24,10 +24,10 @@ body {
 ::selection {
   background: var(--medical-green-200);
   color: var(--medical-green-900);
-}
+} */
 
 /* Keep legacy blue utility classes visually aligned with the medical palette. */
-[class*="bg-blue-"], [class*="bg-sky-"], [class*="bg-cyan-"] {
+/* [class*="bg-blue-"], [class*="bg-sky-"], [class*="bg-cyan-"] {
   background-color: var(--medical-green-600) !important;
 }
 
@@ -72,10 +72,10 @@ body {
 [class*="hover\\:text-blue-"]:hover, [class*="hover\\:text-sky-"]:hover,
 [class*="hover\\:text-cyan-"]:hover {
   color: var(--medical-green-700) !important;
-}
+} */
 
 /* The landing page uses a few arbitrary-value blue classes. */
-[class*="bg-\\[\\#F2F9FD\\]"] {
+/* [class*="bg-\\[\\#F2F9FD\\]"] {
   background-color: var(--medical-green-50) !important;
 }
 
@@ -114,7 +114,7 @@ body {
         transparent 40.99%
       ),
       linear-gradient(-45deg, white 50%, var(--medical-green-600) 50.99%);
-}
+} */
 
 @keyframes slide-in-down {
   0% {

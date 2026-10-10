@@ -123,7 +123,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
 
           {/* Explicit visual button for clear affordance */}
           <div className="mt-4 w-full bg-[#0080C1] text-white text-center py-2.5 rounded-full font-bold text-base md:text-lg group-hover:bg-[#00699E] transition-colors shadow-[0_12px_26px_-14px_rgba(0,128,193,0.9)] flex items-center justify-center gap-2">
-            See Options
+            See Prices
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           </div>
         </div>

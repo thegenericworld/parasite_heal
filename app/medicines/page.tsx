@@ -72,7 +72,7 @@ const CATEGORY_GROUPS: CategoryGroup[] = [
     description: "Hormonal treatments, fertility, and care",
     categories: [
       { name: "Women's Health", slug: "womens-health" },
-      { name: "Female Viagra", slug: toSlug("Female Viagra") },
+      // { name: "Female Viagra", slug: toSlug("Female Viagra") },
       { name: "Birth Control", slug: toSlug("Birth Control") },
       { name: "Infertility Therapy", slug: toSlug("Infertility Therapy") },
     ],
@@ -155,9 +155,9 @@ const CATEGORY_GROUPS: CategoryGroup[] = [
     categories: [
       { name: "Eye Care", slug: toSlug("Eye Care") },
       { name: "Eye Drops", slug: toSlug("Eye Drops") },
-      { name: "Eye Care Capsules", slug: toSlug("Eye Care Capsules") },
-      { name: "Eye Care Tablets", slug: toSlug("Eye Care Tablets") },
-      { name: "Eye Injections", slug: toSlug("Eye Injections") },
+      // { name: "Eye Care Capsules", slug: toSlug("Eye Care Capsules") },
+      // { name: "Eye Care Tablets", slug: toSlug("Eye Care Tablets") },
+      // { name: "Eye Injections", slug: toSlug("Eye Injections") },
       { name: "Eye Ointment & Gel", slug: toSlug("Eye Ointment & Gel") },
     ],
   },
