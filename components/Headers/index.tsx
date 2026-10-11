@@ -90,8 +90,8 @@ export default function Index() {
               <div className="flex items-center justify-between gap-3 ">
 
                 {/* Logo Section */}
-                <Link href="/" className="shrink-0 group">
-                  <div className="flex items-center gap-2 sm:gap-3">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <Link href="/" className="shrink-0 group">
                     <Image
                       width={300}
                       height={100}
@@ -100,23 +100,50 @@ export default function Index() {
                       className="h-10 sm:h-12 lg:h-16 w-auto transition-all duration-300 group-hover:scale-105 filter drop-shadow-xl p-1 sm:p-2"
                       priority
                     />
-                    <div className="hidden md:flex flex-col">
+                  </Link>
+                  <Link
+                    href="/reviews"
+                    className="hidden md:flex flex-col shrink-0 group/reviews"
+                    aria-label="Read customer reviews"
+                  >
                       <span className="text-[10px] sm:text-xs font-semibold text-blue-600 uppercase tracking-wide">Trusted Worldwide</span>
                       <div className="flex items-center gap-0.5 mt-0.5">
                         {[...Array(5)].map((_, i) => (
-                          <svg key={i} className="w-2 h-2 sm:w-3 sm:h-3 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                          <svg key={i} className="w-2 h-2 sm:w-3 sm:h-3 text-yellow-400 fill-current group-hover/reviews:scale-110 transition-transform" viewBox="0 0 20 20">
                             <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                           </svg>
                         ))}
                       </div>
-                    </div>
-                  </div>
+                  </Link>
+                </div>
+
+                <Link
+                  href="/reviews"
+                  className="md:hidden flex flex-col items-center shrink-0 text-center"
+                  aria-label="Read customer reviews"
+                >
+                  <span className="text-[9px] leading-none font-semibold text-blue-600 uppercase tracking-wide">
+                    Trusted worldwide
+                  </span>
+                  <span className="flex items-center gap-0.5 mt-1" aria-hidden="true">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-3 h-3 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      </svg>
+                    ))}
+                  </span>
                 </Link>
 
-                <NavDropdown
-                  label="Categories"
-                  items={allCategoriesItems}
-                />
+                <div className="md:hidden">
+                  <MobileCategoriesMenu items={allCategoriesItems} />
+                </div>
+
+                <div className="hidden md:block">
+                  <NavDropdown
+                    label="Categories"
+                    items={allCategoriesItems}
+                  />
+                </div>
 
                 {/* Enhanced Search Bar */}
                 <div className="hidden md:flex items-center flex-1 max-w-3xl mx-4 ">
@@ -139,6 +166,97 @@ export default function Index() {
           </div>
         </div>
       </header>
+    </>
+  );
+}
+
+type MobileCategoriesMenuProps = {
+  items: [string, string, string][];
+};
+
+function MobileCategoriesMenu({ items }: MobileCategoriesMenuProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setIsOpen(true)}
+        className="flex flex-col items-center justify-center gap-0.5 p-1 text-gray-700"
+        aria-label="Open categories menu"
+        aria-expanded={isOpen}
+        aria-controls="mobile-categories-menu"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+        <span className="text-[10px] font-semibold">Categories</span>
+      </button>
+
+      {isOpen && (
+        <div className="fixed inset-0 z-[60] md:hidden" role="dialog" aria-modal="true" aria-label="Categories menu">
+          <button
+            type="button"
+            className="absolute inset-0 bg-black/40"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close categories menu"
+          />
+          <aside
+            id="mobile-categories-menu"
+            className="relative h-full w-[min(88vw,360px)] overflow-y-auto bg-white shadow-2xl"
+          >
+            <div className="sticky top-0 flex items-center justify-between border-b border-gray-100 bg-white px-5 py-4">
+              <h2 className="text-lg font-bold text-gray-800">Shop by category</h2>
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="rounded-full p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-800"
+                aria-label="Close categories menu"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
+            <nav className="p-3" aria-label="All product categories">
+              {items.map(([labelText, slug]) => (
+                <Link
+                  key={slug}
+                  href={`/categories/${slug}`}
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-between rounded-lg px-3 py-3 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-700"
+                >
+                  {labelText}
+                  <span aria-hidden="true" className="text-gray-400">›</span>
+                </Link>
+              ))}
+            </nav>
+          </aside>
+        </div>
+      )}
     </>
   );
 }

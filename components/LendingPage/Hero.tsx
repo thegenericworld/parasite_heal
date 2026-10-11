@@ -99,19 +99,6 @@ const Hero = () => {
                   Sourced from Verified Manufacturers
                 </span>
               </div>
-              {/* <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/30 rounded-full px-3 py-1.5 ">
-                  <Clock className="w-3.5 h-3.5 text-amber-400" />
-                  <span className="text-[11px] font-medium text-amber-200">Order today, ships within 24 hours</span>
-                </div> */}
-              {/* <div className="inline-flex items-center gap-1.5 bg-amber-500/20 border border-amber-400/40 rounded-full px-3 py-1.5 backdrop-blur-sm">
-                <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-                <span className="text-[11px] md:text-xs font-bold text-amber-200">
-                  {trustStats.rating}
-                </span>
-                <span className="text-[10px] text-amber-200/80">
-                  ({formatNumber(trustStats.reviews)} reviews)
-                </span>
-              </div> */}
             </div>
 
             {/* Headlines */}
@@ -123,23 +110,12 @@ const Hero = () => {
                 </span>
               </h1>
               <p className="md:text-lg text-blue-100 max-w-xl leading-relaxed opacity-90">
-                Join <span className="font-bold text-white">{formatNumber(displayedCustomers)}</span> customers who save up to 90% on their medications. Same active ingredients, delivered discreetly worldwide.
+                Join <span className="font-bold text-white">{formatNumber(displayedCustomers)}</span> customers who save up to 90% on their medications. High-quality products, delivered to your door.
               </p>
             </div>
 
-            {/* Guarantee Badge */}
-            {/* <div className="flex items-center gap-3 bg-green-500/15 border border-green-400/30 rounded-xl px-4 py-3 w-fit backdrop-blur-sm">
-              <div className="flex items-center justify-center w-10 h-10 bg-green-500/20 rounded-full">
-                <ShieldCheck className="w-5 h-5 text-green-400" />
-              </div>
-              <div>
-                <p className="text-sm font-bold text-white">100% Money-Back Guarantee</p>
-                <p className="text-xs text-green-200/80">Not satisfied? Full refund, no questions asked.</p>
-              </div>
-            </div> */}
-
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex gap-4">
               <Link
                 href="/medicines"
                 className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-blue-900 bg-white rounded-xl hover:bg-blue-50 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
@@ -176,15 +152,15 @@ const Hero = () => {
             <div className="pt-4 flex flex-wrap items-center gap-2 md:gap-5 text-[10px] md:text-sm font-medium text-blue-200">
               <div className="flex items-center gap-1 md:gap-2">
                 <Lock className="w-4 h-4 md:w-5 md:h-5 text-green-400" />
-                <span>SSL Encrypted</span>
+                <span>Savings & Saftey</span>
               </div>
               <div className="flex items-center gap-1 md:gap-2">
                 <Package className="w-4 h-4 md:w-5 md:h-5 text-green-400" />
-                <span>Discreet Packaging</span>
+                <span>Trusted Suppliers</span>
               </div>
               <div className="flex items-center gap-1 md:gap-2">
                 <Truck className="w-4 h-4 md:w-5 md:h-5 text-green-400" />
-                <span>Worldwide Delivery</span>
+                <span>Super-fast Delivery</span>
               </div>
             </div>
 
@@ -278,12 +254,6 @@ const Hero = () => {
                       <span>Buy Now</span>
                       <ShoppingCart className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                     </Link>
-
-                    {/* Micro Trust */}
-                    <div className="flex items-center justify-center gap-1 text-[9px] text-slate-500">
-                      <Lock className="w-3 h-3" />
-                      <span>Secure checkout • 256-bit encryption</span>
-                    </div>
                   </div>
                 </div>
 

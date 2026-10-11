@@ -65,7 +65,7 @@ export default async function FeaturedReviews() {
             Customer Reviews
           </h2>
           <p className="text-gray-600 text-base md:text-lg max-w-xl mx-auto">
-            Real reviews from real patients who saved money and got quality medication
+            Reviews from patients who saved money and got quality medication
           </p>
         </div>
 
