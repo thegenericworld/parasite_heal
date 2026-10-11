@@ -8,7 +8,7 @@ const trustStats = {
   customers: 10400,
   orders: 200000,
   countries: 100,
-  rating: 4.8,
+  rating: 4.8,  
   reviews: 10000,
 };
 

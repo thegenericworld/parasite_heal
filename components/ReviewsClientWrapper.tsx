@@ -5,6 +5,8 @@ import { createPortal } from 'react-dom';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 
+const BASE_API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 interface ReviewsClientWrapperProps {
   totalReviews: number;
   productFilter: string;
@@ -46,7 +48,7 @@ export default function ReviewsClientWrapper({}: ReviewsClientWrapperProps) {
     setSubmitting(true);
 
     try {
-      const response = await fetch('/api/reviews', {
+      const response = await fetch(`${BASE_API_URL}/reviews`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
