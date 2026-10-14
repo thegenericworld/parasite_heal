@@ -1,6 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { ShieldCheck } from "lucide-react";
+import {
+  SiAmericanexpress,
+  SiBitcoin,
+  SiDinersclub,
+  SiDiscover,
+  SiJcb,
+  SiMastercard,
+  SiPaypal,
+  SiTether,
+  SiVisa,
+} from "react-icons/si";
+import { FaCcVisa, FaCcMastercard, FaCcAmex, FaCcPaypal } from 'react-icons/fa';
 
 import us2 from "../public/ppal.png";
 
@@ -98,7 +110,7 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-bold text-lg mb-6">Get In Touch</h3>
             <div className="space-y-4">
-              {/* <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-linear-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shrink-0">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -110,7 +122,7 @@ const Footer = () => {
                     +1 (212) 394-6942
                   </a>
                 </div>
-              </div> */}
+              </div>
 
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-linear-to-br from-sky-500 to-blue-500 rounded-lg flex items-center justify-center shrink-0">
@@ -146,8 +158,53 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Trust Badges Bar */}
+          {/* Payment & Money-Back Assurance */}
         <div className="border-t border-gray-800 pt-8 mb-8">
+          <div className="rounded-xl border border-gray-700 bg-gray-800/60 p-5 sm:p-6">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="flex items-start gap-3">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
+                  <ShieldCheck className="h-6 w-6" aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold">Safe payments, backed by our money-back service</h3>
+                  <p className="mt-1 max-w-xl text-sm leading-relaxed text-gray-400">
+                    Choose the payment method that works for you. Refund support is available under our
+                    <Link href="/return-refund-policy" className="ml-1 text-emerald-400 underline decoration-emerald-400/40 underline-offset-2 transition-colors hover:text-emerald-300">
+                      Return & Refund Policy
+                    </Link>
+                    .
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3" aria-label="Accepted payment methods">
+                {[
+                  { label: "MasterCard", Icon: FaCcMastercard, className: "text-[#eb001b]" },
+                  { label: "Visa", Icon: FaCcVisa, className: "text-[#1a1f71]" },
+                  { label: "American Express", Icon: FaCcAmex, className: "text-[#2e77bc]" },
+                  { label: "PayPal", Icon: FaCcPaypal, className: "text-[#003087]" },
+                  { label: "JCB", Icon: SiJcb, className: "text-[#0b4ea2]" },
+                  { label: "Discover", Icon: SiDiscover, className: "text-[#f58220]" },
+                  { label: "Bitcoin", Icon: SiBitcoin, className: "text-[#f7931a]" },
+                  { label: "Tether", Icon: SiTether, className: "text-[#26a17b]" },
+                ].map(({ label, Icon, className }) => (
+                  <span
+                    key={label}
+                    title={label}
+                    aria-label={label}
+                    className="inline-flex items-center justify-center rounded-lg border border-gray-500 bg-white shadow-sm transition-transform duration-200 hover:scale-105 hover:shadow-lg"
+                  >
+                    <Icon className={`h-12 w-auto ${className}`} aria-hidden="true" />
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Trust Badges Bar */}
+        {/* <div className="border-t border-gray-800  mb-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="flex items-center gap-3 justify-center md:justify-start">
               <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center shrink-0">
@@ -163,9 +220,6 @@ const Footer = () => {
 
             <div className="flex items-center gap-3 justify-center md:justify-start">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shrink-0">
-                {/* <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/>
-                </svg> */}
                 <Image src={us2} alt="us2" width={44} height={44}></Image>
               </div>
               <div>
@@ -199,10 +253,12 @@ const Footer = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
+      
 
         {/* Disclaimer */}
-        <div className="bg-gradient-to-r from-gray-800 to-gray-800/50 rounded-lg p-6 mb-8 border border-gray-700">
+        <div className="bg-linear-to-r from-gray-800 to-gray-800/50 rounded-lg p-6 mb-8 border border-gray-700">
           <div className="flex items-start gap-4">
             <div className="shrink-0">
               <div className="w-10 h-10 bg-yellow-500/10 rounded-lg flex items-center justify-center">

@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 // Constants
 const BASE_API_URL = process.env.NEXT_PUBLIC_API_URL;
 // const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL;
-const DELIVERY_FEE = 30; // Flat delivery fee for orders under $199
+const DELIVERY_FEE = 25; // Flat delivery fee for orders under $199
 
 const LOCAL_STORAGE_CART_KEY = "guest_cart_items";
 const API_ENDPOINTS = {

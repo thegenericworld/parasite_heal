@@ -6,7 +6,7 @@ import { useCheckout } from "@/contexts/CheckoutContext";
 
 const LOCAL_STORAGE_CART_KEY = "guest_cart_items";
 const BASE_API_URL = process.env.NEXT_PUBLIC_API_URL;
-const DELIVERY_FEE = 30; // Flat delivery fee for orders under $199
+const DELIVERY_FEE = 25; // Flat delivery fee for orders under $199
 const CRYPTO_DISCOUNT_PERCENTAGE = 20; // 20% discount for crypto payments
 const BANK_DISCOUNT_PERCENTAGE = 20; // 20% discount for bank payments
 
