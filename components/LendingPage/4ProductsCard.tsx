@@ -86,7 +86,7 @@ const ProductCard = ({ data, priority = false }: { data: Product; priority?: boo
         </div>
 
         {/* Content Section */}
-        <div className="p-3 md:p-4 flex flex-col grow">
+        <div className="p-1 md:p-4 flex flex-col grow">
           {/* Product Name */}
           <h3 
             className="text-gray-800 group-hover:text-blue-600 text-sm md:text-base font-bold transition-colors line-clamp-2 text-center mb-2"
@@ -103,7 +103,7 @@ const ProductCard = ({ data, priority = false }: { data: Product; priority?: boo
               </span>
             )}
             {data.generic_name && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600">
                 {data.generic_name}
               </span>
             )}
@@ -111,7 +111,7 @@ const ProductCard = ({ data, priority = false }: { data: Product; priority?: boo
 
           {/* Pricing Section */}
           <div 
-            className="bg-linear-to-r from-blue-50 to-indigo-50 p-3 rounded-xl border border-blue-100 mt-auto"
+            className="bg-linear-to-r from-blue-50 to-indigo-50 p-2 rounded-xl border border-blue-100 mt-auto"
             itemProp="offers"
             itemScope
             itemType="https://schema.org/Offer"
@@ -144,7 +144,7 @@ const ProductCard = ({ data, priority = false }: { data: Product; priority?: boo
       </Link>
 
       {/* CTA Button */}
-      <div className="p-3 pt-0">
+      <div className="p-2 pt-0">
         <Link
           href={`/medicines/${data.slug}`}
           className="w-full bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 md:py-3 px-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-xs md:text-base active:scale-[0.98]"
@@ -196,7 +196,7 @@ const Products = async ({ data, categories, to }: ProductsProps) => {
   const normalizedTo = to.startsWith("/") ? to : `/${to}`;
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-3 md:px-8 py-8 md:py-12">
+    <section className="w-full max-w-7xl mx-auto px-2 md:px-8 py-8 md:py-12">
       {/* Header */}
       <div className="flex items-center justify-between mb-6 md:mb-8 gap-4">
         <div className="flex items-center gap-3 md:gap-4">
@@ -205,9 +205,9 @@ const Products = async ({ data, categories, to }: ProductsProps) => {
             <h2 className="text-gray-800 text-xl md:text-2xl lg:text-3xl font-bold">
               {categories}
             </h2>
-            <p className="text-gray-500 text-sm md:text-base mt-0.5">
+            {/* <p className="text-gray-500 text-sm md:text-base mt-0.5">
               Top rated & trusted treatments
-            </p>
+            </p> */}
           </div>
         </div>
 
@@ -224,7 +224,7 @@ const Products = async ({ data, categories, to }: ProductsProps) => {
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-6">
         {products.map((product, index) => (
           <ProductCard 
             key={product.slug || product.id} 

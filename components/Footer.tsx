@@ -2,15 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import {
-  SiAmericanexpress,
   SiBitcoin,
-  SiDinersclub,
   SiDiscover,
   SiJcb,
-  SiMastercard,
-  SiPaypal,
   SiTether,
-  SiVisa,
 } from "react-icons/si";
 import { FaCcVisa, FaCcMastercard, FaCcAmex, FaCcPaypal } from 'react-icons/fa';
 

@@ -69,7 +69,8 @@ export default function CheckoutForm() {
     const whitelist = [
       'United States',
       'United Kingdom',
-      'Australia'
+      'Australia',
+      'Japan'
     ];
 
     return allCountries.filter(country => whitelist.includes(country.label));
